@@ -1,8 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set SRC_DIR=src\src
-set INCLUDE_DIR=src\include
+set SRC_DIR=src
+set INCLUDE_DIR=include
 set OUT_DIR=build
 
 REM === Helper: build function ===
