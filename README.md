@@ -1,6 +1,6 @@
 # mglib
 
-**mglib** is a work-in-progress Windows library that contains code that I don't want to rewrite over and over again, mostly for Red Team type development. It currently provides a set of utilities for working with Windows privileges, performing process injection, editing the registry, and computing lightweight hashes. The library can be linked statically (`.lib`) or used dynamically via a compiled `.dll`.
+**mglib** is a work-in-progress Windows library that contains code that I don't want to rewrite over and over again. Some of it just interesting stuff, but its mostly for Red Team type development. It currently provides a set of utilities for working with Windows privileges, performing process injection, editing the registry, and computing lightweight hashes. The library can be linked statically (`.lib`) or used dynamically via a compiled `.dll`.
 
 ---
 
@@ -23,21 +23,20 @@
 
 - **NoAPI Functions**
   - Call Windows APIs *without directly linking* to them or importing their symbols.
-  - Useful for stealth operations or avoiding detection in certain environments.
   - I've included the `_api_hashes.h` header with the hashes I've used. It might grow.
 
 ---
 
 ## Build and Usage
 
-You can build both Debug and Release versions of the library using the provided `build.bat` script. Just run it from the root of the repository:
+You can build both Debug and Release versions of the library using the provided `build.bat` script. Just run it from the root of the repository. A quick note if you're wondering why not a VS project, why not a Makefile? It's because this is Windows and I don't want to depend on any external programs. I just want to run `cl thing.c` for my hobby projects.
 
 ```
 build.bat          :: Builds debug by default
 build.bat release  :: Builds release if you specify as 1st argument
 ```
 
-This script will generate the `.lib` and `.dll` outputs and place them in the appropriate `build`  directory.
+This script will generate the `.lib` and `.dll` outputs and place them in the `build`  directory.
 
 ### Static Linking
 
