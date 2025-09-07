@@ -15,6 +15,7 @@ void* NoAPIGetBaseAddress(DWORD target_dll_hash) {
         PLDR_DATA_TABLE_ENTRY_PARTIAL pEntry =
             (PLDR_DATA_TABLE_ENTRY_PARTIAL)((BYTE*)pCurrent - offsetof(LDR_DATA_TABLE_ENTRY_PARTIAL, InMemoryOrderLinks));
 
+        dwprintf(L"Checking %ls : %x\n", pEntry->BaseDllName.Buffer, hash_ror13_wstr(pEntry->BaseDllName.Buffer));
         if (hash_ror13_wstr(pEntry->BaseDllName.Buffer) == target_dll_hash)
         {
             ntdllBase = pEntry->DllBase;

@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#include "_api_hashes.h"
-
 // DEBUG is currently only for debug printfs
 #ifdef DEBUG
 #define dprintf(...)  fprintf( stderr, __VA_ARGS__)
